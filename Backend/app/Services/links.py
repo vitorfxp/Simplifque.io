@@ -39,13 +39,13 @@ async def check_link_safety(url: str) -> Dict:
     if vt_key:
         async with httpx.AsyncClient(timeout=20) as client:
         # 1) enviar URL para análise
-        r = await client.post(
-            "https://www.virustotal.com/api/v3/urls",
-            headers={"x-apikey": vt_key},
-             data={"url": url},
-        )
-        r.raise_for_status()
-        analysis_id = r.json()["data"]["id"]
+            r = await client.post(
+                "https://www.virustotal.com/api/v3/urls",
+                headers={"x-apikey": vt_key},
+                data={"url": url},
+            )
+            r.raise_for_status()
+            analysis_id = r.json()["data"]["id"]
 
 
 # 2) buscar resultado
