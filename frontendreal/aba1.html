@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizagem - Língua Portuguesa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Aprendizagem de Português</h1>
+            <p>Desenvolva suas habilidades na língua portuguesa com exercícios interativos</p>
+        </div>
+
+        <div class="learning-grid">
+            <!-- Vocabulário -->
+            <div class="learning-card">
+                <h2 class="card-title">📖 Expandir Vocabulário</h2>
+                <div class="vocabulary-container">
+                    <p>Aprenda novas palavras e seus significados:</p>
+                    <div class="word-list" id="vocabulary-list">
+                        <!-- Palavras serão carregadas aqui -->
+                    </div>
+                    <button class="btn" onclick="loadNewVocabulary()" style="margin-top: 20px;">Carregar Novas Palavras</button>
+                </div>
+            </div>
+
+            <!-- Questões para Melhorar -->
+            <div class="learning-card quiz-card">
+                <h2 class="card-title">🧠 Questões para Melhorar!</h2>
+                <div class="quiz-info">
+                    <p>Teste seus conhecimentos com nossos quizzes interativos!</p>
+                    <div class="quiz-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🎯</span>
+                            <span>Quiz de Gramática</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🔄</span>
+                            <span>Conjugação de Verbos</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✏️</span>
+                            <span>Desafio de Ortografia</span>
+                        </div>
+                    </div>
+                    <a href="aba2.html"><button class="btn btn-large" onclick="goToQuizzes()">Começar Quizzes</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>

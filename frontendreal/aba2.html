@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes - Língua Portuguesa</title>
+    <link rel="stylesheet" href="quiz-style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Botão IA Simplificador -->
+        <div class="ai-assistant">
+            <button class="ai-btn" onclick="toggleAI()" id="ai-btn">
+                <div class="ai-icon">🤖</div>
+                <div class="ai-text">Simplificador</div>
+            </button>
+            <div class="ai-tooltip" id="ai-tooltip">
+                Clique para ativar a IA que simplifica explicações!
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>🧠 Desafios de Português</h1>
+            <p>Aprenda de forma inteligente: do básico ao avançado</p>
+            <div class="difficulty-selector">
+                <button class="difficulty-btn active" onclick="setDifficulty('facil')" data-level="facil">
+                    😊 Fácil
+                </button>
+                <button class="difficulty-btn" onclick="setDifficulty('medio')" data-level="medio">
+                    🤔 Médio
+                </button>
+                <button class="difficulty-btn" onclick="setDifficulty('dificil')" data-level="dificil">
+                    🔥 Difícil
+                </button>
+            </div>
+            <button class="btn btn-back" onclick="goBack()">← Voltar ao Vocabulário</button>
+        </div>
+
+        <!-- Painel de Conquistas -->
+        <div class="achievements-panel">
+            <h3>🏆 Suas Conquistas</h3>
+            <div class="achievements-grid">
+                <div class="achievement" id="first-correct">
+                    <span class="achievement-icon">⭐</span>
+                    <span>Primeira Resposta</span>
+                </div>
+                <div class="achievement" id="streak-5">
+                    <span class="achievement-icon">🔥</span>
+                    <span>Sequência de 5</span>
+                </div>
+                <div class="achievement" id="grammar-expert">
+                    <span class="achievement-icon">📚</span>
+                    <span>Expert em Gramática</span>
+                </div>
+                <div class="achievement" id="perfect-spelling">
+                    <span class="achievement-icon">✨</span>
+                    <span>Ortografia Perfeita</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <!-- Quiz Adaptativo -->
+            <div class="main-quiz-card">
+                <div class="quiz-header">
+                    <h2 class="quiz-title" id="current-quiz-title">🎯 Quiz Adaptativo</h2>
+                    <div class="quiz-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="current-score">0</span>
+                            <span class="stat-label">Pontos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="current-streak">0</span>
+                            <span class="stat-label">Sequência</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" id="current-level">Fácil</span>
+                            <span class="stat-label">Nível</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="main-progress"></div>
+                    </div>
+                    <div class="progress-text">Questão <span id="question-number">1</span> de <span id="total-questions">10</span></div>
+                </div>
+
+                <!-- Área do Quiz -->
+                <div class="question-area" id="question-area">
+                    <div class="question-card">
+                        <div class="question-type" id="question-type">Gramática</div>
+                        <h3 class="question-text" id="question-text">Carregando pergunta...</h3>
+                        
+                        <!-- Área para diferentes tipos de questão -->
+                        <div class="answer-area" id="answer-area">
+                            <!-- Será preenchido dinamicamente -->
+                        </div>
+                        
+                        <div class="question-help" id="question-help" style="display: none;">
+                            <div class="help-icon">💡</div>
+                            <div class="help-text" id="help-text"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback-area" id="feedback-area" style="display: none;">
+                        <div class="feedback-content" id="feedback-content"></div>
+                        <button class="btn btn-next" onclick="nextQuestion()">Próxima Questão</button>
+                    </div>
+                </div>
+
+                <!-- Explicação da IA -->
+                <div class="ai-explanation" id="ai-explanation" style="display: none;">
+                    <div class="ai-header">
+                        <span class="ai-avatar">🤖</span>
+                        <span>Simplificador IA</span>
+                    </div>
+                    <div class="ai-content" id="ai-content"></div>
+                    <button class="ai-close" onclick="closeAIExplanation()">Entendi!</button>
+                </div>
+            </div>
+
+            <!-- Mini Cards laterais -->
+            <div class="side-activities">
+                <div class="mini-card" onclick="startSpeedRound()">
+                    <div class="mini-icon">⚡</div>
+                    <h4>Rodada Rápida</h4>
+                    <p>10 perguntas em 60 segundos</p>
+                </div>
+                
+                <div class="mini-card" onclick="startDailyChallenge()">
+                    <div class="mini-icon">📅</div>
+                    <h4>Desafio Diário</h4>
+                    <p>Questão especial do dia</p>
+                </div>
+                
+                <div class="mini-card" onclick="reviewMistakes()">
+                    <div class="mini-icon">🔄</div>
+                    <h4>Revisar Erros</h4>
+                    <p>Pratique suas dificuldades</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz-script.js"></script>
+</body>
+</html>
