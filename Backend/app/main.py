@@ -1,15 +1,16 @@
+from dotenv import load_dotenv
+load_dotenv()  # Carrega variáveis do .env
+
+
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware 
 from fastapi.responses import StreamingResponse, JSONResponse 
 from typing import Optional, List, Dict, Any 
 import os 
-from dotenv import load_dotenv
-
 from app.services.ia import chat_completion, transcribe_audio, synthesize_speech 
 from app.services.pdf import summarize_pdf
 from app.services.links import check_link_safety 
 
-load_dotenv()
 
 app = FastAPI(title="Voz amiga API", version="0.1.0")
 
