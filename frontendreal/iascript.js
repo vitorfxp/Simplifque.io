@@ -157,3 +157,16 @@ const resposta = await enviarMensagem("Sua pergunta aqui");
 console.log(resposta);
 
 criarInterfaceChat('seu-container-id');
+
+// components/Chat.js
+export default function Chat() {
+  return (
+    <div className="chat-container">
+      <div className="messages">
+        {/* Mensagens aparecerão aqui */}
+      </div>
+      <input type="text" placeholder="Digite sua mensagem..." />
+      <button>Enviar</button>
+    </div>
+  );
+}
